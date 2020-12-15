@@ -37,13 +37,5 @@ a{
     font-weight: 500;
 }
 p{
-    @include mobile{
-        font-size: 13px;
-    }
-    @include tablet{
-        font-size: 14px;
-    }
-    @include desktop{
-        font-size: 14px;
-    }
+    font-size: 1rem;
 }

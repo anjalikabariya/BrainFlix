@@ -4,8 +4,7 @@ function Button(props) {
     return (
         <div>
             <button className="button__component">
-                {props.icon}
-                {props.name}
+                {props.icon}{props.name}
             </button>
         </div>
     )

@@ -1,12 +1,12 @@
 import React from 'react';
-import ProfileImage from '../ProfileImage';
+import './Comments.scss';
 
 
 function Comments(props) {
     return (
         <div> 
             <div className="comment__container">
-                <ProfileImage />
+                <div className="comment__icon" />
                 <div className="comment">
                     <div className="comment__header">    
                         <h3 className="comment__header-writer">{props.name}</h3>

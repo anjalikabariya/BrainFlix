@@ -1,0 +1,71 @@
+@import '../../styles/styles.scss';
+
+.header{
+    display: block;
+    padding: 2em;
+    max-width: 100%;
+    @include tablet{
+        display: flex;
+        justify-content: space-between;
+    }
+    &__logo{
+        display: flex;
+        padding: 1em 0;
+        justify-content: center;
+        height: 2.5em;
+        width: 50vw;
+        @include tablet{
+            height: 15vh;
+            width: 18vw;
+        }
+        @include desktop{
+            height: 10vh;
+            width: 10vw;
+        }
+        &-container{
+            display: flex;
+            justify-content: center;
+            padding: 0;
+        }
+    }
+    &__navigation{
+        display: block;
+        width: 100%;
+        @include tablet{   
+            display: flex;   
+            justify-content: flex-end;
+            align-items: center;
+        }
+    }
+    &__search{
+        padding: 1em;
+    }
+    &__searchBar{
+        display: flex;
+        justify-content: center;
+        border: 0.2rem solid grey;
+        border-radius: 10%;
+        box-shadow: rgb(36, 35, 35);
+        width: 82vw;
+        padding: 1em;
+        background-color: $alabaster;
+        @include tablet{
+            width: 25vw;
+            height: 8vh;
+        }
+        @include desktop{
+            width: 15vw;
+        }
+    }
+    &__Icon{
+        padding: 0 1em;
+    }
+    &__searchIcon{
+        padding: 0.5em;
+    }
+    &__upload{
+        padding: 1em;
+        display: flex;
+        justify-content: space-between;
+    }
+}
