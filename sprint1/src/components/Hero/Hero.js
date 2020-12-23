@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import './Hero.scss';
 import * as uid from 'uniqid';
-import video from '../../Assets/Video/BrainStationSampleVideo.mp4';
+import video from '../../Assets/Video/BrainStation Sample Video.mp4';
 import VideoPlayer from '../VideoPlayer/VideoPlayer';
 
 class Hero extends Component {

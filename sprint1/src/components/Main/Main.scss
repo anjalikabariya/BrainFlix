@@ -11,10 +11,10 @@ h3{
 .nextVideo__title{
     padding: 1em 0;
 }
-// .comments__section{
-//     display: flex;
-//     flex-direction: column;
-//     @include desktop{
-//         flex-direction: row;
-//     }
-// }
+.main__container{
+    display: flex;
+    flex-direction: column;
+    @include desktop{
+        flex-direction: row;
+    }
+}

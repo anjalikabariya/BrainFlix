@@ -19,7 +19,7 @@ const commentArray = [{"name":"Micheal Lyons", "date":"12/08/2019", "comment":"T
 
 function Main() {
         return (
-            <div>
+            <div className="main__containerx">
                 <div className="comments__section">
                     <NewComment />
                     {commentArray.map(com => (

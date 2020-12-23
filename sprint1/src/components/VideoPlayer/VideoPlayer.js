@@ -14,9 +14,12 @@ function VideoPlayer(props){
                     <div className="vidCard__img">
                         <video id={props.id} src={props.source} alt="recommended video" poster="" controls width={props.width} height={props.height}/>
                     </div>
-                    <div><h2 id="vidCard__title">{props.title}</h2></div>
+                    
             </div>
             <div className="video__card">
+                <div>
+                    <h2 id="vidCard__title">{props.title}</h2>
+                </div>
                 <div className="video__desc-container">
                     <div className="videoCard__desc">
                         <p className="video__channel">By {props.channel}</p>
@@ -32,7 +35,6 @@ function VideoPlayer(props){
                                 <img src={likesIcon} />
                                 <h3 className="video__reachNum">{props.likes}</h3>
                             </div>
-                            
                         </div>
                     </div>
                 </div>
