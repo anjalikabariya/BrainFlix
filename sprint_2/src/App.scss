@@ -1,0 +1,15 @@
+@import './styles/styles.scss';
+
+.app{
+    padding: 0 1em;
+    @include tablet{
+        padding: 0 2em;
+    }
+    @include desktop{
+        padding: 0 10em;
+    }
+
+}
+.divider{
+    height: 1px;
+}

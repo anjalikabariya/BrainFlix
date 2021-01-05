@@ -1,0 +1,20 @@
+@import '../../styles/styles.scss';
+
+h3{
+    color: gray;
+    text-align: left;
+}
+.videoCard__section{
+    display: flex;
+    justify-content: space-between;
+}
+.nextVideo__title{
+    padding: 1em 0;
+}
+.main__container{
+    display: flex;
+    flex-direction: column;
+    @include desktop{
+        flex-direction: row;
+    }
+}

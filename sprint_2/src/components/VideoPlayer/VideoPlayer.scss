@@ -1,0 +1,85 @@
+@import '../../styles/styles.scss';
+
+h3{
+    font-weight: 400;
+}
+
+.vidCard{
+    &__section{
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+    }
+    &__desc{
+      height: fit-content;
+      display: flex;
+      justify-content: flex-start;
+      text-align: left;
+      padding: 1em;
+      width: 100%;
+    }
+
+}
+#vidCard__title{
+    font-size: 3rem;
+    text-align: left;
+    margin: 0;
+    width: 100%;
+    height: 20vh;
+}
+
+
+.video{
+    width: 90%;
+    height: fit-content;
+    &__timestamp{
+        color: grey;
+    }
+    &__Reach{
+        height: fit-content;
+        display: flex;
+        justify-content: flex-start;
+    }
+    &__desc{
+        font-weight: 400;
+        padding: 1em;
+        text-align: left;
+        @include tablet{
+            width: 70%;
+        }
+        @include desktop{
+            width: 50%;
+        }
+        &-container{
+            display: block;
+            @include tablet{
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+            }
+        }
+    }
+    &__views{
+        display: flex;
+        justify-content: flex-start;
+        padding: 1em;
+    }
+    &__likes{
+        @extend .video__views;
+    }
+    &__reachNum{
+        padding-left: 0.5em;
+    }
+    &__channel{
+        font-weight: 500;
+        font-size: 1.5rem;
+        padding: 0 1em 0 0;
+    }
+}
+h2{
+    font-weight: 700;
+    font-size: 3rem;
+}
+p{
+    font-size: 2rem;
+}

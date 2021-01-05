@@ -1,0 +1,148 @@
+@import '../../styles/styles.scss';
+
+.upload{
+    &__container{
+        display: block;
+        border: none;
+        height: auto;
+        @include desktop{
+            display: flex;
+            justify-content: space-between;
+            border-bottom: 1px solid lightslategray;
+            height: 100%;
+        }
+    }
+    &__title{
+        padding-top: 1em;
+        text-align: left;
+        border: none;
+        @include tablet{
+            border-bottom: 1px solid lightslategray ;
+            padding-bottom: 32px;
+        }
+        &-hr{
+            display: none;
+            @include tablet{
+                display: block;
+            }
+        }
+    }
+    &__image{
+        width: 100%;
+        border-radius: 5%;
+        @include tablet{
+            width: 50%;
+            padding: 0;
+            height: 15em;
+        }  
+        @include desktop{
+            border-radius: 0;
+            width: 100%; 
+            height: 19em;
+            padding-bottom: 2em;
+        }
+        &-container{
+            display: flex;
+            flex-direction: column;
+            padding-top: 2rem;
+            padding-right: 0;
+            width: 100%;
+            @include desktop{
+                padding-right: 2em;
+                height: 100%;
+            }
+        }
+        &-label{
+            text-align: left;
+            color: lightgray;
+            font-weight: 500;
+        }
+    }
+    &__video{
+        &-form{
+            text-align: left;
+            padding-top: 32px;
+            width: 100%;
+            border: none;
+            @include tablet{
+                width: 100%;
+                border-bottom: 1px solid lightslategray;
+            }
+            @include desktop{
+                border: none;
+                width: 150%;
+                height: 10em;
+            }
+        }
+        &-title{
+            border: none;
+            width: 100%;
+            height: max-content;
+            display: flex;
+            flex-wrap: wrap;
+            background-color: #fafafa;
+            &-container{
+                display: flex;
+                border: 0.1rem solid lightgrey;
+                border-radius: 5%;
+                padding: 1em;
+                height: 4vw;
+                width: auto;
+                background-color: #fafafa;
+                padding: 1em;
+                @include tablet{
+                    height: 4vh;
+                }
+                @include desktop{
+                    width: auto;
+                    height: 2vh;
+                }
+            }
+            &-label{
+                @extend .upload__image-label;
+            }
+        }
+        &-desc{
+            @extend .upload__video-title;
+            &-container{
+                height: 40vh;
+                @include desktop{
+                    height: 25vh;
+                }
+                @extend .upload__video-title-container;
+            }
+            &-label{
+                @extend .upload__image-label;
+            }
+        }
+    }
+    &__button{
+        display: flex;
+        font-weight: 500;
+        flex-direction: column-reverse;
+        @include tablet{
+            flex-direction: row;
+            justify-content: flex-end;
+        }
+        &-publish{
+            padding-top: 2em;
+            padding-bottom: 24px;
+            
+        }
+        &-cancel{
+            justify-content: center;
+            color: $brainflix-blue;
+            height: 10vh;
+            width: 100%;
+            padding: 0;
+            display: flex;
+            @include  tablet{
+                width: auto;
+                padding: 3em;
+            }
+        }
+    }
+}
+form{
+    padding-bottom: 2em;
+}
