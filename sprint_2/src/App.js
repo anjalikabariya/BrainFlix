@@ -7,7 +7,7 @@ import Header from './components/Header';
 import Main from './components/Main';
 
 export const API_URL = 'https://project-2-api.herokuapp.com.';
-const API_KEY = axios.get(`${API_URL}/register`)
+const API_KEY = "8cd5d58f-e8ac-43b5-879b-9c9ba9dca6fe";
 .then(function(res) {console.log(res)});
 
 
