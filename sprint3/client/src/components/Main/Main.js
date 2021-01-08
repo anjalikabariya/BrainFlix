@@ -17,7 +17,7 @@ export default class Main extends Component {
     }
     
     componentDidMount(){
-        const API_URL = 'http://localhost:8080/videos/';
+        const API_URL = 'http://localhost:8080';
         axios.all([
             axios.get(`${API_URL}`),
             axios.get(`${API_URL}/${this.state.onloadVideo}/`)
@@ -65,8 +65,8 @@ export default class Main extends Component {
                         <section className="nextVideo">
                             <h3 className="nextVideo__title">NEXT VIDEO</h3>
                             <div className="nextVideo__container">
-                                {this.state.nextVideo.nextVideo &&
-                                    this.state.nextVideo.nextVideo
+                                {this.state.nextVideo &&
+                                    this.state.nextVideo
                                     .filter((vid) => vid.id !== this.state.mainVideo.id)
                                     .map((vid) => {
                                         return <RecommendedVideos video = {vid} id={vid.id} videoId={vid.id} />
