@@ -17,13 +17,13 @@ app.get("/videos", (req, res) => {
 
 app.get("/videos/:id", (req, res) => {
     let videosId = req.params.id;
-    let currVideo = videoData.find((video)=>video.id == videosId);
+    let currVideo = videoData.videos.find((video)=>video.id === videosId);
     res.status(200).send(currVideo);
 })
 
-// app.post("/videos", (req, res) =>{
-//     upload.videos.push(req.body);
-//     res.send(upload.videos);
-// });
+app.post("/videos", (req, res) =>{
+    videoData.videos.push(req.body);
+    res.send(videoData.videos);
+});
 
 app.listen(8080, () => console.log("server started on http://localhost:8080"));

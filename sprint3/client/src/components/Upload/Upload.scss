@@ -77,7 +77,7 @@
         &-title{
             border: none;
             width: 100%;
-            height: max-content;
+            height: 100%;
             display: flex;
             flex-wrap: wrap;
             background-color: #fafafa;
@@ -103,13 +103,24 @@
             }
         }
         &-desc{
-            @extend .upload__video-title;
+            border: none;
+            width: 100%;
+            height: auto;
+            display: flex;
+            flex-wrap: wrap;
+            background-color: #fafafa;
             &-container{
+                display: flex;
+                border: 0.1rem solid lightgrey;
+                border-radius: 5%;
+                padding: 1em;
                 height: 40vh;
+                width: auto;
+                background-color: #fafafa;
+                padding: 1em;
                 @include desktop{
                     height: 25vh;
                 }
-                @extend .upload__video-title-container;
             }
             &-label{
                 @extend .upload__image-label;

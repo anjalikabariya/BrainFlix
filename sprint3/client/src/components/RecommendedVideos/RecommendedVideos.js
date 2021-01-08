@@ -5,7 +5,7 @@ import VideoCard from '../VideoCard';
 export class RecommendedVideos extends Component {
     render() {
         return (
-            <Link className="" to={`/video/${this.props.videoId}`}>
+            <Link to={`/videos/${this.props.videoId}`}>
                 <VideoCard image={this.props.video.image} title={this.props.video.title} channel={this.props.video.channel} />
             </Link>
         )

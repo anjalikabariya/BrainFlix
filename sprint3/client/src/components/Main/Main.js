@@ -17,16 +17,16 @@ export default class Main extends Component {
     }
     
     componentDidMount(){
-        const API_URL = 'http://localhost:8080';
+        const API_URL = 'http://localhost:8080/videos';
         axios.all([
             axios.get(`${API_URL}`),
             axios.get(`${API_URL}/${this.state.onloadVideo}/`)
         ])
         .then((response) => {
-            let mainVideo = response.data;
-            mainVideo.comments = response.data.comments;
+            const mainVideo = response[0].data.mainVideo;
+            console.log(response[0].data.videos);
             this.setState({
-                nextVideo: response.data,
+                nextVideo: response[0].data.sideVideo,
                 mainVideo: mainVideo,
             })
         })
@@ -34,14 +34,13 @@ export default class Main extends Component {
     }
 
     componentDidUpdate(){
+        const API_URL = 'http://localhost:8080';
         const currId = this.props.match.params.id;
-        if(currId && this.state.currVideo !== currId){
-            axios.all([
-                axios.get(`${this.API_URL}`),
-                axios.get(`${this.API_URL}/${this.state.onloadVideo}`)
-            ])
+        if(currId && this.state.mainVideo.id !== currId){
+            axios.get(`${API_URL}/videos/${currId}`)
             .then((response) => {
-                this.setState({
+                console.log(response.data);
+                this.setState({   
                     mainVideo: response.data,
                 });
             })
@@ -65,8 +64,7 @@ export default class Main extends Component {
                         <section className="nextVideo">
                             <h3 className="nextVideo__title">NEXT VIDEO</h3>
                             <div className="nextVideo__container">
-                                {this.state.nextVideo &&
-                                    this.state.nextVideo
+                                {this.state.nextVideo
                                     .filter((vid) => vid.id !== this.state.mainVideo.id)
                                     .map((vid) => {
                                         return <RecommendedVideos video = {vid} id={vid.id} videoId={vid.id} />

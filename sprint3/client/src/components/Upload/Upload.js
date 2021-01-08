@@ -1,8 +1,7 @@
 import Button from '../Button';
 import React from 'react';
 import './Upload.scss';
-// import axios from 'axios';
-// import URL from 'http://localhost:8080/videos';
+import axios from 'axios';
 
 const Thumbnail__img = require('../../Assets/Images/Upload-video-preview.jpg');
 
@@ -18,7 +17,8 @@ class Upload extends React.Component{
         });
     };
 
-   /* handleSubmit = (e) => {
+    handleSubmit = (e) => {
+        const URL = 'http://localhost:8080/videos';
         e.preventDefault();
         const data = {
             title: this.state.title,
@@ -27,11 +27,12 @@ class Upload extends React.Component{
         };
 
         axios({
-            url: "http://localhost:8080/videos",
-            method: "POST",
+            method: 'post',
+            url: URL,
             data: data,
             })
             .then(() => {
+                console.log(data)
                 this.setState({
                     title:"",
                     channel:"",
@@ -41,18 +42,18 @@ class Upload extends React.Component{
                 return console.log(error);
             });
     };
-*/
+
     render(){
         return (
             <div>
-                <h1 className="upload__title">Upload Video</h1>
-                <div className="upload__container">
-                    <div className="upload__image-container">
-                        <h2><span className="upload__image-label">VIDEO THUMBNAIL</span></h2>
-                        <img className="upload__image" src={Thumbnail__img} alt="upload video preview image" />
-                    </div>
-                    <div className="upload__video-form">
-                        <form action="">
+                <form action="" onSubmit={this.handleSubmit}>
+                    <h1 className="upload__title">Upload Video</h1>
+                    <div className="upload__container">
+                        <div className="upload__image-container">
+                            <h2><span className="upload__image-label">VIDEO THUMBNAIL</span></h2>
+                            <img className="upload__image" src={Thumbnail__img} alt="upload video preview image" />
+                        </div>
+                        <div className="upload__video-form">
                             <label>
                                 <span className="upload__video-title-label">TITLE YOUR VIDEO</span>
                                 <div className="upload__video-title-container">
@@ -66,15 +67,15 @@ class Upload extends React.Component{
                                     <input className="upload__video-desc" type="text" name="description" placeholder="Add a description of your video" value={this.state.channel} onChange={this.handleChange}/>
                                 </div>
                             </label>
-                        </form>
+                        </div>
                     </div>
-                </div>
-                <div className="upload__button">
-                    <div className="upload__button-cancel">CANCEL</div>
-                    <div className="upload__button-publish" >
-                        <Button name="PUBLISH" /> 
-                    </div>   
-                </div>
+                    <div className="upload__button">
+                        <div className="upload__button-cancel">CANCEL</div>
+                        <div className="upload__button-publish" >
+                            <Button name="PUBLISH" /> 
+                        </div>   
+                    </div>
+                </form>
             </div>
         )
     }
