@@ -2,33 +2,39 @@
 
 .comment{
     width: 80vw;
-    padding: 0 1.5rem;
+    padding: 0 1rem;
     @include desktop{
         width: 50vw;
     }
     &__text{
         font-weight: 400;
+        line-height: 1.3rem;
+        margin: 0 0 1rem 0;
+        @include tablet{
+            box-sizing: border-box;
+        }
     }
     &__icon{
-        height: 12vw;
-        width: 12vw;
+        height: 2.8125rem;
+        width: 2.8125rem;
         border-radius: 100%;
         background-color: grayscale($color: #b9b5b5);
         @include tablet{
-            width: 8vh;
-            height: 8vh;
+            width: 3rem;
+            height: 3rem;
         }
     }
     &__container{
-        margin: 1em;
-        width: 100%;
+        margin: 0;
+        padding:0;
         display: flex;
-        justify-content: space-between;
-        
-        @include desktop{
-            width: 50vw;
+        &-hr{
+            width: 90vw;
+            border: 1px solid $gallery-background;
+            @include desktop {
+                width: 100%;
+            }
         }
-        border-bottom: 1px solid $gallery-background;
     }
     &__header{
         width: 65vw;
@@ -44,9 +50,6 @@
         }
         &-writer{
             font-weight: 500;
-            padding: 0 1em 0 0;
-            margin: 0;
-            text-align: left;
             height: fit-content;
             color: black;
         }
@@ -55,8 +58,6 @@
             align-items: flex-end;
             color: silver;
             height: fit-content;
-            margin: 0;
-            padding: 0;
         }
     }
 }

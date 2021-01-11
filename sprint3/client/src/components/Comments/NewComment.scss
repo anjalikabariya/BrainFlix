@@ -2,44 +2,78 @@
 
 .comment{
     &__section{
-        width: 100%;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        padding: 1em 0;
-        @include desktop{
-            width: 50%;
-        }
         &-newcomment{
-            display: flex;
-            justify-content: space-around;
-            width: 100%;
-            padding: 1em 0;
+            &-title{
+                display: flex;
+                margin: 1rem 0 0.5rem 20vw;
+                font-weight: 700;
+                color: #afafaf;
+                font-size: 0.9375rem;
+                @include tablet {
+                    justify-content: flex-start;
+                    margin: 0 0 0 13vw;
+                }
+                @include desktop {
+                    margin-left: 12vw;
+                }            
+            }
+            &-form{
+                display: flex;
+                flex-direction: row;
+                padding: 0 1em;
+                justify-content: space-around;
+                
+                &-container{
+                    margin: 1rem;
+                    display: flex;
+                    flex-direction: column;
+                    @include tablet {
+                        margin: 1.5rem;
+                    }
+                    @include desktop {
+                        margin-left: 6rem;
+                    }                
+                }
+            }  
+            &-container{
+                width: 100%;
+                display: flex;
+                padding-left: 2.5rem;
+                flex-direction: column;
+                justify-content: space-around;
+                @include tablet {
+                    flex-direction: row;
+                    justify-content: flex-start;
+                }
+            }  
+            &-image{
+                margin: 0 1rem 0 -2rem;
+            }
+            &__button:hover {
+                background-color: #0065ad;
+                transition: 0.2s;
+                border: 0;
+                cursor: pointer;
+            }
+            &-text{
+                border-radius: 0.25rem;
+                border: 1px solid #afafaf;
+                width: 65vw;
+                height: 24vw;
+                @include tablet{
+                    width: 50vw;
+                    height: 10vh;
+                }
+                @include desktop{
+                    width: 22vw;
+                }
+            }
         }
-    }
-    &__form{
-        display: flex;
-        width: 100%;
-        flex-direction: column;
-        align-items: stretch;
-        padding: 0 1em;
-        @include tablet{
-            flex-direction: row;
-            justify-content: space-around;
-        }
-    }
-    &__input-text{
-        width: 65vw;
-        height: 24vw;
-        @include tablet{
-            width: 50vw;
-            height: 4vh;
-            padding: 1em;
-        }
-        @include desktop{
-            width: 100%;
-        }
-    }
+    }   
+}
+div{
+    margin: 0;
+    padding: 0;
 }
 h2{
     font-size: 1rem;

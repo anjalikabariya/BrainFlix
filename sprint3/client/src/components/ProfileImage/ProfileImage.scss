@@ -1,15 +1,15 @@
 @import '../../styles/styles.scss';
 
 .profileImage{
-    height: 12vw;
-    width: 12vw;
+    height: 3rem;
+    width: 3rem;
     border-radius: 100%;
     object-position: left;
     object-fit: cover;
     background-color: gray;
     @include tablet{
-        width: 8vh;
-        height: 8vh;
+        width: 2.8125rem;
+        height: 2.8125rem;
     }
     
 }

@@ -1,2 +1,120 @@
 @import '../../styles/styles.scss';
 
+.video__desc{
+    font-weight: 400;
+    padding: 1em;
+    text-align: left;
+    @include tablet{
+        width: 70%;
+    }
+    @include desktop{
+        width: 50%;
+    }
+    &-info-container{
+        @include tablet {
+            display: flex;
+            justify-content: space-between;
+            margin: 1.5rem;
+        }
+        @include desktop {
+            width: 90%;
+            margin-top: 0;
+            margin-left: 0;
+        }
+    }
+    &-title{
+        margin: 1.5625rem 1rem 0;
+        font-size: 1.5em;
+        line-height: 2rem;
+        font-weight: 900;
+        @include tablet {
+            margin: 3rem 1.5rem 0;
+            font-size: 2.25rem;
+            line-height: 2.75rem;
+        }
+        @include desktop {
+            text-align: left;
+            margin-left: 0;
+            margin-top: 1.8125rem;
+            font-size: 2rem;
+        }
+    }
+    &-channel{
+        font-weight: 500;
+        font-size: 1.5rem;
+        padding: 0 1em 0 0;
+        &-container{
+            display: flex;
+            align-items: center;
+            margin: 0 16px;
+            @include tablet {
+              margin: 0;
+            }
+        }
+    }
+    &-timestamp{
+        color: #afafaf;
+        margin: 0 0 0 0.5rem;
+    }
+    &-reach{
+        &-container{
+            align-items: center;
+            margin: 0 16px;
+            display: flex;
+            @include tablet{
+                margin: 0;
+            }
+        }
+        &-num{
+            padding-left: 0.5em;
+        }
+    }
+    &-views{
+        &-container{
+            display: flex;
+            @include tablet{
+                align-items: center;
+            }
+        }
+    }
+    &-likes{
+        &-container{
+            @extend .video__desc-views-container;
+            margin: 0 0 0 2.5rem;
+            @include tablet{
+                margin: 0 0 0 0.5rem;
+            }
+        }
+    }
+    &-hr{
+        width: 90vw;
+        border: 1px solid #e1e1e1;
+        margin: 1rem;
+        @include tablet {
+          width: 94vw;
+          margin: 1rem 1rem 2rem;
+        }
+        @include desktop {
+          width: 45vw;
+          margin: 1rem 0 2rem;
+        }
+    }
+    &-para{
+        height: fit-content;
+        display: flex;
+        justify-content: flex-start;
+        text-align: left;
+        padding: 1em;
+        width: 98%;
+    }
+}
+h2{
+font-weight: 700;
+font-size: 3rem;
+}
+p{
+font-size: 2rem;
+}
+h3{
+    font-weight: 400;
+}

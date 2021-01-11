@@ -1,85 +1,200 @@
 @import '../../styles/styles.scss';
 
-h3{
-    font-weight: 400;
-}
-
-.vidCard{
-    &__section{
-      display: flex;
-      flex-direction: column;
-      width: 100%;
-    }
-    &__desc{
-      height: fit-content;
-      display: flex;
-      justify-content: flex-start;
-      text-align: left;
-      padding: 1em;
-      width: 100%;
-    }
-
-}
-#vidCard__title{
-    font-size: 3rem;
-    text-align: left;
-    margin: 0;
-    width: 100%;
-    height: 20vh;
-}
-
-
 .video{
     width: 90%;
     height: fit-content;
-    &__timestamp{
-        color: grey;
-    }
-    &__Reach{
-        height: fit-content;
-        display: flex;
-        justify-content: flex-start;
-    }
-    &__desc{
-        font-weight: 400;
-        padding: 1em;
-        text-align: left;
-        @include tablet{
-            width: 70%;
+    &__container{
+        position: relative;
+        @include tablet {
+            display: flex;
+            align-items: center;
+            background-color: black;
+            height: 50vw;
         }
-        @include desktop{
-            width: 50%;
+        @include desktop {
+            height: 38vw;
         }
-        &-container{
-            display: block;
-            @include tablet{
-                display: flex;
-                align-items: center;
-                justify-content: space-between;
+        &-video{
+            width: 100%;
+            height: 55vw;
+            @include tablet {
+                height: 51vw;
+            }
+            @include desktop {
+                margin: 0 auto;
+                width: 66vw;
+                height: 37vw;
             }
         }
+        &-play{
+            &-control{
+                position: absolute;
+                display: flex;
+                top: 44vw;
+                right: 77vw;
+                left: 2vw;
+                @include tablet {
+                    left: 3vw;
+                    bottom: 0;
+                    top: 43vw;
+                }
+                @include desktop {
+                    top: 33vw;
+                    left: 8vw;
+                    right: 0;
+                }
+            }
+            &-button{
+                background-color: rgba(0, 0, 0, 0.5);
+                border: 0;
+                border-radius: 0.25rem;
+                padding: 0.5rem;
+                height: 7vw;
+                width: 17vw;
+                @include tablet {
+                  height: 5vw;
+                  width: 8vw;
+                }
+                @include desktop {
+                  height: 3vw;
+                  width: 5vw;
+                  display: flex;
+                  align-items: center;
+                  justify-content: center;
+                }
+            }
+            &-image{
+                height: 5vw;
+                @include tablet {
+                  height: 2vw;
+                }
+                @include desktop {
+                  height: 2vw;
+                }
+            }
+        }
+        &-progress{
+            &-button{
+                position: absolute;
+                display: flex;
+                align-items: center;
+                border: 0;
+                width: 45vw;
+                height: 7vw;
+                top: 44vw;
+                left: 19vw;
+                border-radius: 0.25rem;
+                background-color: rgba(0, 0, 0, 0.55);
+                @include tablet {
+                  justify-content: flex-start;
+                  top: 43vw;
+                  left: 13vw;
+                  height: 5vw;
+                  width: 65vw;
+                }
+                @include desktop {
+                  height: 3vw;
+                  width: 49vw;
+                  top: 33vw;
+                  left: 14vw;
+                }
+            }
+            &-bar{
+                border-radius: 0.25rem;
+                height: 0.25rem;
+                width: 31vw;
+                background-color: #000;
+                @include tablet {
+                  width: 53vw;
+                  margin: 0 3vw;
+                }
+                @include desktop {
+                  margin: 0 1.5vw;
+                }
+            }
+        }
+        &-time-control{
+            display: none;
+            @include tablet {
+                display: flex;
+                color: #fafafa;
+                width: 5rem;
+            }
+            @include desktop {
+                width: 8.6vw;
+            }
+        }
+        &-fullscreen{
+            &-control{
+                position: absolute;
+                display: flex;
+                justify-content: center;
+                top: 44vw;
+                left: 65vw;
+                right: 0;
+                @include tablet {
+                    top: 43vw;
+                    right: 0;
+                    left: 79vw;
+                }
+                @include desktop {
+                    left: 59vw;
+                    top: 33vw;
+                }
+            }
+            &-button{
+                width: 12vw;
+                height: 7vw;
+                border-radius: 0.25rem 0 0 4px;
+                border: 0;
+                padding: 0.5rem;
+                background-color: rgba(0, 0, 0, 0.5);
+                @include tablet {
+                    width: 4vw;
+                    height: 5vw;
+                }
+                @include desktop {
+                    height: 3vw;
+                    width: 3vw;
+                }
+            }
+            &-image{
+                height: 6vw;
+                @include tablet {
+                height: 2.5vw;
+                }
+                @include desktop {
+                height: 2vw;
+                }
+            }
+        }
+        &-volume{
+            &-button{
+                width: 12.6vw;
+                height: 7vw;
+                border-radius: 0 0.25rem 0.25rem 0;
+                border: 0;
+                padding: 0.5rem;
+                background-color: rgba(0, 0, 0, 0.5);
+                @include tablet {
+                  width: 5vw;
+                  height: 5vw;
+                }
+                @include desktop {
+                  height: 3vw;
+                  width: 3vw;
+                }                
+            }
+            &-image{
+                height: 6vw;
+                @include tablet {
+                  height: 2.5vw;
+                }
+                @include desktop {
+                  height: 2vw;
+                }                
+            }
+        }
+        
     }
-    &__views{
-        display: flex;
-        justify-content: flex-start;
-        padding: 1em;
-    }
-    &__likes{
-        @extend .video__views;
-    }
-    &__reachNum{
-        padding-left: 0.5em;
-    }
-    &__channel{
-        font-weight: 500;
-        font-size: 1.5rem;
-        padding: 0 1em 0 0;
-    }
-}
-h2{
-    font-weight: 700;
-    font-size: 3rem;
-}
-p{
-    font-size: 2rem;
 }

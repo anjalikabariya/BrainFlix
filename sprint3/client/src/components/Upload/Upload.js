@@ -20,7 +20,7 @@ class Upload extends React.Component{
     handleSubmit = (e) => {
         const URL = 'http://localhost:8080/videos';
         e.preventDefault();
-        const data = {
+        const uploadData = {
             title: this.state.title,
             channel: this.state.channel,
             image: {Thumbnail__img},
@@ -29,10 +29,9 @@ class Upload extends React.Component{
         axios({
             method: 'post',
             url: URL,
-            data: data,
+            data: uploadData,
             })
             .then(() => {
-                console.log(data)
                 this.setState({
                     title:"",
                     channel:"",
@@ -57,14 +56,14 @@ class Upload extends React.Component{
                             <label>
                                 <span className="upload__video-title-label">TITLE YOUR VIDEO</span>
                                 <div className="upload__video-title-container">
-                                    <input type="text" name="title" placeholder="Add a title to your video" className="upload__video-title" value={this.state.title} onChange={this.handleChange} />
+                                    <textarea type="text" name="title" placeholder="Add a title to your video" className="upload__video-title" value={this.state.title} onChange={this.handleChange} />
                                 </div>
                             </label>
                             <br />
                             <label>
                                 <span className="upload__video-desc-label">ADD A VIDEO DESCRIPTION</span>
                                 <div className="upload__video-desc-container">
-                                    <input className="upload__video-desc" type="text" name="description" placeholder="Add a description of your video" value={this.state.channel} onChange={this.handleChange}/>
+                                    <textarea className="upload__video-desc" type="text" name="description" placeholder="Add a description of your video" value={this.state.channel} onChange={this.handleChange}/>
                                 </div>
                             </label>
                         </div>

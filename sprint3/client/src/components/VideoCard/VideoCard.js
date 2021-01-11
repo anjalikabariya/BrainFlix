@@ -3,14 +3,14 @@ import './VideoCard.scss';
 
 function VideoCard({title, image, channel }) {
         return (
-            <div>
+            <div className="videoCard">
                 <div className="videoCard__section">
-                    <div className="videoCard__img">
-                        <img src={image} alt="thumbnail-image" />
-                    </div>
-                    <div className="videoCard__title">
-                        <div><h2>{title}</h2></div>
-                        <div><p>{channel}</p></div>
+                    <div className="videoCard__section-container">
+                        <img src={image} alt="videocard-image" className="videoCard-image" />
+                        <div className="videoCard__desc-container">
+                            <div><p className="videoCard__desc-title">{title}</p></div>
+                            <div><p className="videoCard__desc-channel">{channel}</p></div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -18,3 +18,4 @@ function VideoCard({title, image, channel }) {
 }
 
 export default VideoCard;
+ 

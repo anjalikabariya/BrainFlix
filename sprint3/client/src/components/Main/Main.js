@@ -26,7 +26,7 @@ export default class Main extends Component {
             const mainVideo = response[0].data.mainVideo;
             console.log(response[0].data.videos);
             this.setState({
-                nextVideo: response[0].data.sideVideo,
+                nextVideo: response[0].data.videos,
                 mainVideo: mainVideo,
             })
         })
@@ -52,25 +52,21 @@ export default class Main extends Component {
         
         return (
             <main className="main__container">
-                <VideoPlayer video={this.state.mainVideo} />
+                <VideoPlayer key={this.state.mainVideo.id} video={this.state.mainVideo} />
                 <section className="main__container-section">
                     <section className="main__container-section-left">
-                        <VideoDesc currVideo={this.state.mainVideo} />
-                        <section className="comments__section">
-                            <NewComment commentArr={this.state.mainVideo.comments} />
-                        </section>
+                        <VideoDesc currVideo={this.state.mainVideo} key={this.state.mainVideo.id} />
+                        <NewComment commentArr={this.state.mainVideo.comments} key={this.state.mainVideo.id} />
                     </section>
                     <section className="main__container-section-right"> 
-                        <section className="nextVideo">
-                            <h3 className="nextVideo__title">NEXT VIDEO</h3>
-                            <div className="nextVideo__container">
-                                {this.state.nextVideo
-                                    .filter((vid) => vid.id !== this.state.mainVideo.id)
-                                    .map((vid) => {
-                                        return <RecommendedVideos video = {vid} id={vid.id} videoId={vid.id} />
-                                })}
-                            </div>
-                        </section>
+                        <h3 className="nextVideo__title">NEXT VIDEO</h3>
+                        <div className="nextVideo__container">
+                            {this.state.nextVideo 
+                                .filter((vid) => vid.id !== this.state.mainVideo.id)
+                                .map((vid) => {
+                                    return <RecommendedVideos video={vid} key={vid.id+1} videoId={vid.id} />
+                            })}
+                        </div>
                     </section>
                 </section>
             </main>

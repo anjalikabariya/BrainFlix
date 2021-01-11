@@ -5,6 +5,7 @@ import './Comments.scss';
 function Comments(props) {
     return (
         <div> 
+            <hr className="comment__container-hr" />
             <div className="comment__container">
                 <div className="comment__icon" />
                 <div className="comment">

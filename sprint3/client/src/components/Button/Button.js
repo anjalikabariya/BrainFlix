@@ -2,7 +2,7 @@ import React from 'react';
 import './Button.scss';
 function Button(props) {
     return (
-        <div>
+        <div className="button__container">
             <button className="button__component">
                 {props.icon}{props.name}
             </button>

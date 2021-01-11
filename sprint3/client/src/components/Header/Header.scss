@@ -1,32 +1,42 @@
 @import '../../styles/styles.scss';
 
 .header{
-    display: block;
-    padding-top: 2em;
-    max-width: 100%;
-    // border-bottom: 0.5px solid lightgrey;
-    @include tablet{
-        display: flex;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 10rem;
+    @include tablet {
+        flex-direction: row;
+        align-items: baseline;
+        height: 5rem;
+        margin: 1.25rem 1.5rem 0;
         justify-content: space-between;
     }
+    @include desktop {
+        margin: 1.25rem 0;
+        width: 87vw;
+    }
     &__logo{
-        display: flex;
-        padding: 1em 0;
-        justify-content: center;
-        height: 2.5em;
-        width: 50vw;
-        @include tablet{
-            height: 15vh;
-            width: 18vw;
+        height: 1.625rem;
+        @include tablet {
+          align-self: baseline;
         }
-        @include desktop{
-            height: 10vh;
-            width: 10vw;
+        @include desktop {
+          margin: 0 32rem 0 6rem;
         }
         &-container{
             display: flex;
             justify-content: center;
             padding: 0;
+            align-items: center;
+            height: 3rem;
+            @include tablet{
+                align-self:center;
+                margin: 0 8.75rem 0 0;
+            }
+            @include desktop{
+                width: 35vw;
+            }
         }
     }
     &__navigation{
@@ -40,31 +50,36 @@
         }
     }
     &__search{
-        display: flex;
-        border: 0.1rem solid lightgrey;
-        border-radius: 5%;
-        width: 90%;
-        height: 3vh;
-        background-color: #fafafa;
-        margin: 0;
-        @include tablet{
-            width: 100%;
-            height: 8vh;
-            margin-right: 1em;
+        width: 90vw;
+        height: 2rem;
+        @include tablet {
+          width: 31vw;
         }
     }
     &__searchBar{
-        display: flex;
-        justify-content: center;
-        background-color: $alabaster;
-        border: none;
-        width: 5em;
-        height: auto;
+        font-family: "Avenir";
+        width: 80vw;
+        height: 2.8125rem;
+        border: 1px solid #afafaf;
+        border-radius: 0.25rem;
+        background-image: url("../../Assets/Icons/SVG/Icon-search.svg");
+        background-repeat: no-repeat;
+        background-position: 0.625rem 0.625rem;
+        padding: 0 1.25rem 0 2.5rem;
+        @include tablet {
+          width: 20vw;
+        }
+        @include desktop {
+          width: 23vw;
+        }
     }
     &__Icon{
         display: flex;
         justify-content: flex-end;
-        padding: 0 1em;
+        margin: 1.5rem 0 0 1rem;
+        @include tablet{
+            margin: 0.5rem 0 0 1.5rem;    
+        }
     }
     &__searchIcon{
         background-image: url("../../Assets/Icons/SVG/Icon-search.svg");
@@ -75,12 +90,44 @@
         margin: 1em;
     }
     &__upload{
-        display: flex;
-        justify-content: space-between;
-        padding: 1em 0;
-        width: 110%;
-        &-button-container{
-            width: 80%;
+        &-button{
+            font-weight: 700;
+            font-style: normal;
+            font-size: 1rem;
+            height: 2.8125rem;
+            width: 80vw;
+            margin: 1.5rem 0 0 0;
+            border: 0;
+            border-radius: 0.25rem;
+            background-color: #0095ff;
+            color: #fafafa;
+            @include tablet {
+              margin: 0.5rem 0 0 1.5rem;
+              width: 15.755vw;
+            }
+            @include desktop {
+              width: 9vw;
+            }
+            &-container{
+                display: flex;
+                width: 90vw;
+                height: 3rem;
+                @include tablet {
+                    width: 26vw;
+                }
+                @include desktop {
+                    width: 23vw;
+                }
+            }
+            &-image{
+                margin-right: 0.6rem;
+            }
         }
+        &__button:hover {
+            background-color: #0065ad;
+            transition: 0.2s;
+            border: 0;
+            cursor: pointer;
+        }            
     }
 }
